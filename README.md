@@ -40,7 +40,7 @@ We provide [Some experimental results ]()
 </center>
 
 ## [Training and Validation](UASP-BAE.train.py)
-We provide [UASP-BAE.train code](UASP-BAE.train.py) :
+We provide [UASP-BAE.train code](UASP-BAE.train.py), and you can perform it by the following command:
 ```
 CUDA_VISIBLE_DEVICES=0 python UASP-BAE.train.py \
 --model_name "UASP_BAE_net1" \
@@ -48,8 +48,7 @@ CUDA_VISIBLE_DEVICES=0 python UASP-BAE.train.py \
 ```
 
 ## [Inference](UASP-BAE.test.py)
-We provide [inference code](UASP-BAE.test.py), that demonstrate how to load our
-model:
+We provide [inference code](UASP-BAE.test.py), and you can perform it by the following command:
 ```
 CUDA_VISIBLE_DEVICES=0 python UASP-BAE.test.py \
 --model_name "UASP_BAE_net1" \
