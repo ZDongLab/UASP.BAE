@@ -6,12 +6,12 @@ import logging
 import torch
 from torch import nn
 logger = logging.getLogger(__name__)
-from ..tresnet import TResnetM, TResnetL, TResnetXL
-from ..ttresnet import TTResnetM, TTResnetL, TTResnetXL
-from ..res2net import res2net50, res2next50 
-from ..coatnet import coatnet_0, coatnet_1, coatnet_2, coatnet_3, coatnet_4
-from ..creatvit import m_Vit, m_T2TViT, m_CrossViT
-from ..cmt import cmt_b, cmt_s, cmt_xs, cmt_ti
+#from ..tresnet import TResnetM, TResnetL, TResnetXL
+#from ..ttresnet import TTResnetM, TTResnetL, TTResnetXL
+#from ..res2net import res2net50, res2next50 
+#from ..coatnet import coatnet_0, coatnet_1, coatnet_2, coatnet_3, coatnet_4
+#from ..creatvit import m_Vit, m_T2TViT, m_CrossViT
+#from ..cmt import cmt_b, cmt_s, cmt_xs, cmt_ti
 from ..csatnet import UASP_BAE_net0, UASP_BAE_net1, UASP_BAE_net2,UASP_BAE_net3
 
 def prepare_device(n_gpu_use):
@@ -36,13 +36,21 @@ def create_model(args):
     args.model_name = args.model_name.lower()
     print("{} model Creating".format(args.model_name))
     logger.info("{} model Creating".format(args.model_name))
-    if args.model_name=='tresnet_m':
+    if args.model_name=='uasp_bae_net0':
+        model = UASP_BAE_net0(model_params)
+    elif args.model_name=='uasp_bae_net1':
+        model = UASP_BAE_net1(model_params)
+    elif args.model_name=='uasp_bae_net2':
+        model = UASP_BAE_net2(model_params)
+    elif args.model_name=='uasp_bae_net3':
+        model = UASP_BAE_net3(model_params)    
+    '''
+    elif args.model_name=='tresnet_m':
         model = TResnetM(model_params)
     elif args.model_name=='tresnet_l':
         model = TResnetL(model_params)
     elif args.model_name=='tresnet_xl':
         model = TResnetXL(model_params)
-
     elif args.model_name=='ttresnet_m':
         model = TTResnetL(model_params)
     elif args.model_name=='ttresnet_l':
@@ -81,15 +89,7 @@ def create_model(args):
         model = cmt_xs(model_params)
     elif args.model_name=='cmt_ti':
         model = cmt_ti(model_params)
-
-    elif args.model_name=='uasp_bae_net0':
-        model = UASP_BAE_net0(model_params)
-    elif args.model_name=='uasp_bae_net1':
-        model = UASP_BAE_net1(model_params)
-    elif args.model_name=='uasp_bae_net2':
-        model = UASP_BAE_net2(model_params)
-    elif args.model_name=='uasp_bae_net3':
-        model = UASP_BAE_net3(model_params)
+    '''
 
     else:
         print("model: {} not found !!".format(args.model_name))
