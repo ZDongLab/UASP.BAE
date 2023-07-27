@@ -3,7 +3,7 @@
 <img src='.\demo\UASP-BAE-0.png', width='300'>
 </center>
 
-[Paper: 2023_JBHI_UASP-OPGage.pdf](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221020) 
+[Paper: 2023_JBHI_UASP-OPGage.pdf](https://doi.org/10.1109/JBHI.2023.3297610) 
 
 Before implementing the code, you need to configure and setup some libraries required by the following [Requirements](requirements.txt):
 
@@ -62,9 +62,10 @@ If you use UASP-BAE in your research, please cite:
 @ARTICLE{Dong2023,
   author  = {Dong, Zhang and Jing, Yang and Shaoyi, Du and Wenqing, Bu and Yu-cheng Guo},
   title   = {An uncertainty-aware and sex-prior guided biological age estimation from orthopantomogram images},
-  journal = {IEEE Journal of Biomedical and Health Informatics (Under Review R1)}, 
-  volume  = {X},
+  journal = {IEEE Journal of Biomedical and Health Informatics}, 
+  volume  = {},
   year    = {2023},
-  pages   = {XXXXX}
+  pages   = {1--12},
+  doi = {10.1109/JBHI.2023.3297610}
 }
 ```
